@@ -1,5 +1,6 @@
 name: Run Our Application 
-
+env:
+  using: 'node20'
 on:
   schedule:
     - cron: '*/30 * * * *' #use https://crontab.guru/
