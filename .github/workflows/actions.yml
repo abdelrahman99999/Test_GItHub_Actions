@@ -15,10 +15,10 @@ jobs:
     steps:
 
       - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runner
+        uses: actions/checkout@v4.1.5 # checkout the repository content to github runner
 
       - name: setup python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5.1.0
         with:
           python-version: '3.10.8' # install the python version needed
           
@@ -38,7 +38,7 @@ jobs:
           git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
           
       - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
+        uses: zyrouge/github-push-action@v1.0.12
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main 
