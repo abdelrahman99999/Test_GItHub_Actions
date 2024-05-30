@@ -2,7 +2,11 @@ name: Run Our Application
 
 on:
   schedule:
-    - cron: '*/30 * * * *' #use https://crontab.guru/ for cornitor
+    - cron: '*/30 * * * *' #use https://crontab.guru/
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
